@@ -1,0 +1,46 @@
+  [1m[36m (214.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (116.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRooms (20150224191331)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "thumburl" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150224191331"]]
+  [1m[36m (246.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (33.6ms)[0m  [1mINSERT INTO "rooms" ("created_at", "name", "thumburl", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 24 Feb 2015 19:34:16 UTC +00:00], ["name", "my_first_room"], ["thumburl", 0], ["updated_at", Tue, 24 Feb 2015 19:34:16 UTC +00:00]]
+  [1m[35m (185.6ms)[0m  commit transaction
+
+
+Started GET "/rooms" for 127.0.0.1 at 2015-02-24 22:30:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#index as HTML
+  Rendered rooms/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 806ms (Views: 787.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-24 22:30:32 -0500
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at 2015-02-24 22:30:32 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-24 22:30:33 -0500
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2015-02-24 22:30:33 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-24 22:30:33 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-24 22:30:33 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-24 22:30:33 -0500
