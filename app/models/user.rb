@@ -34,4 +34,8 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  def as_json(optins={})
+    {:name => self.name, :contact => self.contact}
+  end
 end

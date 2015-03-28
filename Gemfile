@@ -12,6 +12,9 @@ gem 'coffee-rails',         '4.1.0'
 gem 'jquery-rails',         '4.0.3'
 gem 'turbolinks',           '2.3.0'
 gem 'jbuilder',             '2.2.3'
+gem 'active_model_serializers'
+gem 'rspec_api_documentation'
+gem 'apipie-rails'
 gem 'sdoc',                 '0.4.0', group: :doc
 
 group :development, :test do
