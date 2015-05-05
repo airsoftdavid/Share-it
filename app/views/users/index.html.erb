@@ -1,9 +1,35 @@
-<% provide(:title, 'All users') %>
-<h1>All users</h1>
+<p id="notice"><%= notice %></p>
 
-<%= will_paginate %>
+<h1>Listing Users</h1>
 
-<ul class="users">
-    <%= render @user %>
-</ul>
-<%= will_paginate %>
+<table>
+ <colgroup>
+ <col span = "1" style = "width: 25%;">
+ <col span = "1" style = "width: 25%;">
+ <col span = "1" style = "width: 25%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Admin</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.contact %></td>
+        <td><%= Admin.find(user.admin_id).username %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% link_to 'New User', new_user_path %>

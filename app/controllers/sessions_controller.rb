@@ -2,23 +2,21 @@ class SessionsController < ApplicationController
   def new
   end
 
-   def create
-    user = User.find_by(contact: params[:session][:contact].downcase)
-    if user && user.authenticate(params[:session][:contact])
-      # Log the user in and redirect to the user's show page.
-       log_in user
-       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to user
+  def create
+   admin = Admin.find_by(email: params[:session][:email].downcase)
+    if admin && admin.authenticate(params[:session][:password])
+      # Log the admin in and redirect to the admin's show page.
+      log_in admin
+      params[:session][:remember_me] == '1' ? remember(admin) : forget(admin)
+      redirect_back_or admin
     else
-      # Create an error message.
-      flash.now[:danger] = 'Sorry! We cannot seem to find your number.'
-
+      flash[:danger] = 'Invalid email/password combination' # Not quite right!
       render 'new'
     end
   end
 
   def destroy
   	log_out if logged_in?
-  	redirect_to root_url
+    redirect_to root_url
   end
 end

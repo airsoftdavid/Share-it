@@ -1,22 +1,30 @@
 Rails.application.routes.draw do
-
-  namespace :api, :defaults => {:format => :json} do
-    namespace :v1 do
-      get     '/users',     to: 'users#index'
-      post    '/users',     to: 'users#create'
-      get     '/users/:id', to: 'users#show'
-      delete  '/users/:id', to: 'users#destroy'
-    end
-end
-  root             'static_pages#home'
-  get 'help'    => 'static_pages#help'
-  get 'about'   => 'static_pages#about'
-  get 'contact' => 'static_pages#contact'
-  get 'sessions/new'
-
-  get 'signup' => 'users#new'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
   resources :users
+  resources :admins
+
+#   get 'sessions/new'
+#   root             'static_pages#home'
+#   get 'help'    => 'static_pages#help'
+#   get 'about'   => 'static_pages#about'
+#   get 'contact' => 'static_pages#contact'
+#   get 'signup'  => 'admins#new'
+#   get    'login'   => 'sessions#new'
+#   post   'login'   => 'sessions#create'
+#   delete 'logout'  => 'sessions#destroy'
+# end
+
+
+  root to: 'static_pages#home'
+
+
+  match '/signup',   to: 'admins#new',            via: :get
+  match '/signin',   to: 'sessions#new',          via: :get
+  match '/signin',   to: 'sessions#create',       via: :post
+  match '/signout',  to: 'sessions#destroy',      via: :delete
+
+  match '/help',     to: 'static_pages#help',      via: :get
+  match '/about',    to: 'static_pages#about',     via: :get
+  match '/contact',  to: 'static_pages#contact',   via: :get
+  match '/rooms',    to: 'admins#show',            via: :get
+  
 end

@@ -1,4 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# empty
+one:
+  name: MyString
+  contact: MyString
+  admin_id: 1
 
+two:
+  name: MyString
+  contact: MyString
+  admin_id: 1
