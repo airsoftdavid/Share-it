@@ -1,17 +1,24 @@
 <% provide(:title, "Admin Log In") %>
-<h1>Sign In/ Sign Up</h1>
+<h1>Sign In / Sign Up</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <h2>Been here before?</h2>
+<table> 
+<tr> 
+<td width = "50%">
+  <p><font size = "5">Been here before?</font></p>
     <p>
-      Are you an admin(did you run a room)? <%= link_to "Sign in as Admin!", adminsignin_path %><br>
+      Are you an admin? <%= link_to "Sign in as Admin!", adminsignin_path %><br>
       Are you a user?  <%= link_to "Sign in as User!", usersignin_path %>
     </p>
-    <h3>Are you new to Share-it?</h3>
+</td>
+<td>
+    <p><font size = "5"> Are you new to Share-it?</font></p>
     <p>
-      Are you a new admin? <%= link_to "Signup as Admin!", signup_path %><br>
-      Are you a new user? <%= link_to "Signup as User!", new_user_path %>
+        Are you a new admin? <%= link_to "Signup as Admin!", signup_path %><br>
+        Are you a new user? <%= link_to "Signup as User!", new_user_path %>
     </p>
+    </td> 
+</tr></table>
   </div>
 </div>
