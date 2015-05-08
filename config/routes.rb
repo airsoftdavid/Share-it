@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   match '/usersignin',    to: 'sessions#user_signin',   via: :get
   match '/adminsignin',   to: 'sessions#admin_create',  via: :post
   match '/usersignin',    to: 'sessions#user_create',   via: :post
-  match '/api_test',      to: 'admins#index',           via: :get
+  match '/admins.json',   to: 'admins#index.json',      via: :get
+  match '/users.json',    to: 'users#index.json',       via: :get
   match '/signin',        to: 'sessions#new',           via: :post
   match '/signin',        to: 'sessions#new',           via: :get
   match '/signout',       to: 'sessions#destroy',       via: :delete
