@@ -1,24 +1,17 @@
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<% provide(:title, "Admin Log In") %>
+<h1>Sign In/ Sign Up</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: signin_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
-      <% end %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <h2>Been here before?</h2>
+    <p>
+      Are you an admin(did you run a room)? <%= link_to "Sign in as Admin!", adminsignin_path %><br>
+      Are you a user?  <%= link_to "Sign in as User!", usersignin_path %>
+    </p>
+    <h3>Are you new to Share-it?</h3>
+    <p>
+      Are you a new admin? <%= link_to "Signup as Admin!", signup_path %><br>
+      Are you a new user? <%= link_to "Signup as User!", new_user_path %>
+    </p>
   </div>
 </div>
