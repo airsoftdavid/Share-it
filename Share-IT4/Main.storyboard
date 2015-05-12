@@ -101,7 +101,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKL-OK-um7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K2V-oc-8Q8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2320" y="-1624"/>
+            <point key="canvasLocation" x="2368" y="-1624"/>
         </scene>
         <!--Add Room-->
         <scene sceneID="nTf-Ri-z38">
@@ -249,9 +249,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5D-Mv-Ps1">
-                                <rect key="frame" x="277" y="72" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5D-Mv-Ps1">
+                                <rect key="frame" x="152" y="116" width="296" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="Show Contacts">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -275,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhT-dg-zIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3764" y="-323"/>
+            <point key="canvasLocation" x="3764" y="-879"/>
         </scene>
         <!--Settings-->
         <scene sceneID="tne-QT-ifu">
@@ -300,7 +301,6 @@
         <!--Account Login-->
         <scene sceneID="JsX-M9-dit">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lVm-A1-FNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="OfC-cx-kiQ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NeL-sx-g6B">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -313,6 +313,21 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0cY-yQ-inw" id="bjW-rz-4sT">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Currently Signed in As: " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kUJ-z9-oVX">
+                                                    <rect key="frame" x="210" y="5" width="181" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="181" id="Pae-ze-4yf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kUJ-z9-oVX" firstAttribute="bottom" secondItem="bjW-rz-4sT" secondAttribute="bottomMargin" id="DGR-fx-Ehh"/>
+                                                <constraint firstItem="kUJ-z9-oVX" firstAttribute="top" secondItem="bjW-rz-4sT" secondAttribute="topMargin" constant="-3" id="g8T-BT-lUV"/>
+                                                <constraint firstItem="kUJ-z9-oVX" firstAttribute="centerX" secondItem="bjW-rz-4sT" secondAttribute="centerX" id="usI-0D-mbl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="yND-Za-D2u" kind="presentation" id="miN-mw-X0E"/>
@@ -338,6 +353,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Account Login" id="1Hl-zs-8HZ"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVm-A1-FNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="780" y="601"/>
         </scene>
@@ -403,7 +419,6 @@
         <!--Account-->
         <scene sceneID="Uix-CD-oeR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1lM-Ru-2hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="adU-9X-QPT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Account" image="accounticon" id="7Cz-Kh-rGo"/>
                     <toolbarItems/>
@@ -416,6 +431,7 @@
                         <segue destination="OfC-cx-kiQ" kind="relationship" relationship="rootViewController" id="2lq-am-JNq"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lM-Ru-2hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-62" y="601"/>
         </scene>
@@ -435,7 +451,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgI-jH-Pxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="-1624"/>
+            <point key="canvasLocation" x="1556" y="-1624"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nq5-ca-yAY">
@@ -489,7 +505,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fr9-mP-l6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3068" y="-323"/>
+            <point key="canvasLocation" x="3064" y="-879"/>
         </scene>
     </scenes>
     <resources>

@@ -1,5 +1,0 @@
-/admins.json
-[{"id":1,"username":"Dave Ivey","email":"email@host.com","url":"https://rcos-share-it.herokuapp.com/admins/1.json"},{"id":2,"username":"dchen","email":"dchen@gmail.com","url":"https://rcos-share-it.herokuapp.com/admins/2.json"},{"id":3,"username":"shvedj","email":"shvedj@rpi.edu","url":"https://rcos-share-it.herokuapp.com/admins/3.json"}]
-
-/users.json
-[{"id":1,"name":"random guest 1","contact":"0123456789","admin_id":1,"url":"https://rcos-share-it.herokuapp.com/users/1.json"},{"id":2,"name":"test guest 2","contact":"0192837465","admin_id":2,"url":"https://rcos-share-it.herokuapp.com/users/2.json"},{"id":3,"name":"test guest 3","contact":"0009998888","admin_id":3,"url":"https://rcos-share-it.herokuapp.com/users/3.json"},{"id":4,"name":"test guest 4","contact":"1112223333","admin_id":1,"url":"https://rcos-share-it.herokuapp.com/users/4.json"},{"id":5,"name":"test guest 5","contact":"5555555555","admin_id":1,"url":"https://rcos-share-it.herokuapp.com/users/5.json"}]

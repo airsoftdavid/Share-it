@@ -1,40 +1,41 @@
 //
-//  RoomDetailsViewController.swift
-//  Share-IT2
+//  RoomsViewController.swift
+//  
 //
-//  Created by David Chen on 5/7/15.
-//  Copyright (c) 2015 David Chen. All rights reserved.
+//  Created by David Chen on 5/1/15.
+//
 //
 
 import UIKit
 
-class RoomDetailsViewController: UITableViewController {
-
-    var room1: Room!;
-
-    //@IBOutlet weak var RoomNameText: UITextField!
+class RoomsViewController: UITableViewController {
     
-    @IBOutlet weak var RoomNameText: UITextField!
+    @IBAction func cancelToRoomsViewController(segue:UIStoryboardSegue) {
+        
+    }
     
-    @IBOutlet weak var userNumber1: UITextField!
-    @IBOutlet weak var userNumber2: UITextField!
-    @IBOutlet weak var userNumber3: UITextField!
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SaveRoomsDetail" {
-            let user1 = self.userNumber1.text as String
-            let user2 = self.userNumber2.text as String
-            let user3 = self.userNumber3.text as String
-            var tempusers = [User(fName: user1, lName: "Smith", identification: 00001), User(fName: user2, lName: "Smith", identification: 00002), User(fName: user3, lName: "Smith", identification: 00003)]
-            room1 = Room(vtitle: self.RoomNameText.text, vid: 000001, vuserlist: tempusers)
-            println(RoomNameText.text!)
+    @IBAction func saveRoomsDetail(segue:UIStoryboardSegue) {
+        if let RoomDetailsViewController = segue.sourceViewController as? RoomDetailsViewController {
+            
+            //add the new player to the players array
+            if(RoomDetailsViewController.room1 != nil){
+                roomsList.append(RoomDetailsViewController.room1)
+            }
+            
+            //update the tableView
+            //tableView.reloadData()
+            println((roomsList.count))
+            let indexPath = NSIndexPath(forRow: roomsList.count-1, inSection: 0)
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
+        
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        //self.tabBarController?.tabBar.barTintColor = UIColor(red: 0, green: 165/255, blue: 255, alpha: 1)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -49,53 +50,49 @@ class RoomDetailsViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 {
-            RoomNameText.becomeFirstResponder()
-        }
-    }
-    
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- /*   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+/*
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
+    */
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return roomsList.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("RoomsTableCell", forIndexPath: indexPath) as! UITableViewCell
 
-        // Configure the cell...
-
+        let room1 = roomsList[indexPath.row] as Room
+        cell.textLabel?.text = room1.title
+        var mystring = String(room1.id)
+        if(room1.userList.count > 1){
+            var nameString = room1.userList[0].firstName
+            for index in 1...(room1.userList.count-1)
+            {
+                nameString += ", "
+                nameString += room1.userList[index].firstName
+            }
+            cell.detailTextLabel?.text = nameString
+        }
+        else{
+            cell.detailTextLabel?.text = room1.userList[0].firstName
+        }
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            roomsList.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -141,6 +138,7 @@ class RoomDetailsViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    */
 
 }
+
+

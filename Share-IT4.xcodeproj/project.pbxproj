@@ -99,6 +99,7 @@
 		63EA24C01AFC695E009D7A71 /* Share-IT4 */ = {
 			isa = PBXGroup;
 			children = (
+				63EA24EA1AFC69B7009D7A71 /* SampleData.swift */,
 				63EA24C51AFC695E009D7A71 /* ViewController.swift */,
 				630145871AFC8DF600565509 /* ContactsTableViewController.swift */,
 				630F12C81AFD2AC300E5FA76 /* AccountLoginViewController.swift */,
@@ -106,7 +107,6 @@
 				6301458B1AFCAE4700565509 /* Sample.json */,
 				63EA24E31AFC6983009D7A71 /* Main.storyboard */,
 				63EA24E91AFC69B7009D7A71 /* Room.swift */,
-				63EA24EA1AFC69B7009D7A71 /* SampleData.swift */,
 				63EA24E51AFC69AA009D7A71 /* RoomDetailsViewController.swift */,
 				63EA24E61AFC69AA009D7A71 /* RoomsViewController.swift */,
 				63EA24C11AFC695E009D7A71 /* Supporting Files */,

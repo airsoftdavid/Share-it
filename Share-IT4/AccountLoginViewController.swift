@@ -20,7 +20,10 @@ class AccountLoginViewController: UIViewController {
         
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
+        webView.scrollView.scrollEnabled = true;
+        webView.scalesPageToFit = true;
         webView.loadRequest(request)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
