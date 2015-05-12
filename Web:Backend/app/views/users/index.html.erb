@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Users</h1>
+
+<table>
+ <colgroup>
+ <col span = "1" style = "width: 30%;">
+ <col span = "1" style = "width: 30%;">
+ <col span = "1" style = "width: 30%;">
+</colgroup>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Admin</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.contact %></td>
+        <td><%= link_to Admin.find(user.admin_id).username, user.admin, method: :get %></td>
+        <td><%= link_to 'User Profile', user %></td>
+        <td><% link_to 'Edit', edit_user_path(user) %></td>
+        <td><% link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% link_to 'New User', new_user_path %>

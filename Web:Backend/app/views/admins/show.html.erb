@@ -1,0 +1,31 @@
+<% provide(:title, @admin.username) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @admin %>
+        <%= @admin.username %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @admin.users.any? %>
+      <h3>Users (<%= @admin.users.count %>)</h3>
+      <ol class="users">
+
+      <% @users.each do |users|%>
+      <li>
+        <%= "Name: "%><br>
+        <%= link_to users.name, users, method: :get %><br>
+        <%= "Number: " %><br>
+        <%= users.contact %><br>
+        <% if current_admin?(@admin) %>
+        <u><%= link_to 'Delete', users, method: :delete, data: { confirm: 'Are you sure?' } %></u>
+        <% end %>
+      </li>
+      <% end %>
+      </ol>
+      <%= will_paginate @users %>
+    <% end %>
+  </div>
+</div>
