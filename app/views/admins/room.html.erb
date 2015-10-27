@@ -1,0 +1,11 @@
+<% provide(:title, 'My Room') %>
+<h1>My Room</h1>
+<%= will_paginate %>
+
+<ul class="admins">
+	<% @admins.users.each do |user|%>
+   		<li style = "margin-bottom: 50px; list-decoration: none;" ><%= render user %></li>
+	<% end %>
+</ul>
+
+<%= will_paginate %>
